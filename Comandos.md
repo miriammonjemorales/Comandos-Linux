@@ -246,3 +246,54 @@ chmod 1777 stickydir/
 
 Si hacemos ls aparecerá una "T" mayúscula  en la opción de ejecución para otros usuarios si esta desativada la ejecución pero activados los permisos sticky bit. Por el contrario será una "t" minúscula si está activa la ejecución y los permisos sticky bit.
 
+26. Comando find (para buscar):
+```
+find [/path/to/directory] [search_parameters]
+```
+27. Para buscar 
+Ej:
+```
+find -name file1.txt (busca en el directorio actual al no meter la ruta)
+```
+Nota: el parametro es sensible a mayúsculas y minúsculas.
+
+28. Para buscar y que no tenga encuenta mayúsculas y minúsculas.
+```
+find -iname Felix
+```
+
+29. Para buscar algo que empieza por una letra:
+```
+find -name "f*"
+``` 
+
+30. Para buscar archivos más grandes de 10 gb.
+Ej:
+```
+find /lib64/ -size +10M
+```
+
+31. Buscar los archivos que se han modificado en el último minuto.
+Ej:
+```
+find /dev/ -mmin -1
+```
+Nota: Hay que tener en cuenta que si pones por ejemplo cinco min empieza a contar desde 1 min.
+Ej: 12:01 (empezaría desde aquí hasta 12:05 ya que de otro modo serían seis y no cinco valores)
+
+32. Buscar los archivos modificados hace cinco minutos :
+
+Ej:
+```
+find /dev/ -mmin +5
+```
+Nota: Ej mostraría los valores desde 12:00 para atrás empezando por 11:59. cuando usas el "+" salta la hora actual en el conteo
+
+33. Buscar los archivos modificados hace justo cinco min.
+```
+find /dev/ -mmin 5
+```
+Nota : Ej sería 12:01 contando desde las 12:05 que son ahora mismo.
+
+34. 
+
